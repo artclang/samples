@@ -24,7 +24,27 @@ Operating system, compiler/interpreter version, dependency libraries, build tool
 
 List the main files involved in this example and their roles (such as. c,. h, Makefile, etc.).
 
-
+```c
+SID_XXXX/
+│
+├── .gitignore
+├── SID_XXXX.acws
+├── main/
+│   ├── .gitignore
+│   ├── main.aclib
+│   └── src/
+│       ├── main.artc
+│       └── main.test.artc
+│
+├── dir2/
+│   ├── sub-dir1/
+│   │   └── file3.ext
+│   └── sub-dir2/
+│
+└── dir3/
+    ├── file4.ext
+    └── file5.ext
+```
 
 # 编译方法 / How to Build
 
