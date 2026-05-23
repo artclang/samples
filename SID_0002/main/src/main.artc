@@ -15,7 +15,7 @@ declare "C" from "stdio.h" {
 public int32 main() {
     printf("main call sqliteDemo_Run\n");
 
-    sqliteDemo_Run();
+    Run();
 
     return 0;
 }

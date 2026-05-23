@@ -1,3 +1,15 @@
 <Lib Version="0.1.0" Type="lib">
   <Dependencies />
+  <NativeOptions>
+    <IncludePaths>
+      <Path>../sqlite</Path>
+    </IncludePaths>
+    <Sources>
+      <Source>../sqlite/sqlite3.c</Source>
+      <Source>../sqlite/sqlite_helper.c</Source>
+    </Sources>
+    <Defines>
+      <Define>SQLITE_THREADSAFE=0</Define>
+    </Defines>
+  </NativeOptions>
 </Lib>

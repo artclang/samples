@@ -1,22 +1,6 @@
 package partial sqliteDemo;
 
-@test("加法基本验证")
-void test_add() {
-    assert(add(1, 2) == 3);
-    assert(add(0, 0) == 0);
-    assert(add(-1, 1) == 0);
-}
-
-@test("取最大值验证")
-void test_max() {
-    assert(max(3, 5) == 5);
-    assert(max(5, 3) == 5);
-    assert(max(4, 4) == 4);
-}
-
-@test("范围限制验证")
-void test_clamp() {
-    assert(clamp(5, 0, 10) == 5);
-    assert(clamp(-1, 0, 10) == 0);
-    assert(clamp(15, 0, 10) == 10);
+@test("sqliteDemo_Run 冒烟测试")
+void test_sqliteDemo_run() {
+    Run();
 }
