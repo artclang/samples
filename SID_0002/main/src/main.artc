@@ -1,0 +1,21 @@
+package main;
+
+import "sqliteDemo";
+
+declare "C" from "stdio.h" {
+    int printf(const char* format, ...);
+}
+
+
+/**
+ * 程序入口
+ *
+ * @return 退出码，0 表示成功
+ */
+public int32 main() {
+    printf("main call sqliteDemo_Run\n");
+
+    sqliteDemo_Run();
+
+    return 0;
+}

@@ -1,0 +1,75 @@
+package sqliteDemo;
+
+declare "C" from "stdio.h" {
+    int fprintf(FILE *stream, const char *format, ...);
+}
+
+declare "C" from "sqlite3.h" {
+    SQLITE_API int sqlite3_open(
+    const char *filename,   /* Database filename (UTF-8) */
+    sqlite3 **ppDb          /* OUT: SQLite db handle */
+    );
+
+    SQLITE_API int sqlite3_exec(
+    sqlite3*,                                  /* An open database */
+    const char *sql,                           /* SQL to be evaluated */
+    int (*callback)(void*,int,char**,char**),  /* Callback function */
+    void *,                                    /* 1st argument to callback */
+    char **errmsg                              /* Error msg written here */
+    );
+
+    SQLITE_API int sqlite3_close(sqlite3*);
+}
+
+public void sqliteDemo_Run() {
+    sqlite3* db;
+    char* errMsg = 0;
+    int rc;
+
+    // open database
+    rc = sqlite3_open("c:\\sqliteDB\\test01.db", &db);
+    if (rc) {
+        fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+    }
+    else {
+        fprintf(stdout, "Database is opened\n");
+    }
+
+    // drop table users
+    char* sql_drop_users = "DROP TABLE IF EXISTS users;";
+    rc = sqlite3_exec(db, sql_drop_users, 0, 0, &errMsg);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "SQL error: %s\n", errMsg);
+        sqlite3_free(errMsg);
+    }
+    else {
+        fprintf(stdout, "Table users is dropped\n");
+    }
+
+    // create table users
+    char* sql_create_users = "CREATE TABLE users(id INT, name TEXT, password TEXT, email TEXT, PRIMARY KEY(id));";
+    rc = sqlite3_exec(db, sql_create_users, 0, 0, &errMsg);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "SQL error: %s\n", errMsg);
+        sqlite3_free(errMsg);
+    }
+    else {
+        fprintf(stdout, "Table users is created\n");
+    }
+
+    // insert data
+    char* sql_insert_user = "INSERT INTO users VALUES(1, \"admin\", \"123456\", \"admin@abc.com\");";
+    rc = sqlite3_exec(db, sql_insert_user, 0, 0, &errMsg);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "SQL error: %s\n", errMsg);
+        sqlite3_free(errMsg);
+    }
+    else {
+        fprintf(stdout, "Insert data is finished\n");
+    }
+
+    // close database
+    sqlite3_close(db);
+
+    printf("Info: database is closed\n");
+}

@@ -1,0 +1,8 @@
+package partial main;
+
+@test("平方计算验证")
+void test_square() {
+    assert(square(0) == 0);
+    assert(square(3) == 9);
+    assert(square(-2) == 4);
+}
