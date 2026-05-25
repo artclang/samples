@@ -1,0 +1,25 @@
+package main;
+
+declare "C" from "stdio.h" {
+    int printf(const char* format, ...);
+}
+
+/**
+ * 计算整数的平方
+ *
+ * @param x 输入值
+ * @return x 的平方
+ */
+public int32 square(int32 x) {
+    return x * x;
+}
+
+/**
+ * 程序入口
+ *
+ * @return 退出码，0 表示成功
+ */
+public int32 main() {
+    printf("Hello from main!\n");
+    return 0;
+}

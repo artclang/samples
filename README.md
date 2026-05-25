@@ -28,5 +28,10 @@ The root directory of each sample must contain a README file, and the contents o
 | ------------ | -------------------- | ------------------------------------------------------------ |
 | SID_0001     | Hello World          | 使用artc语言实现世界上最广为人知的例程。<br>Implement the world's most well-known sample using the Artc language. |
 | SID_0002     | Sqlite Demo          | 使用artc库和c库构建应用程序。<br>Build applications using the ArtC library and C library. |
+| SID_0003     | FreeRTOS             | 使用artc语言构建多线程应用程序。<br>Build multi-threaded applications using Artc language. |
+|              |                      |                                                              |
+|              |                      |                                                              |
+|              |                      |                                                              |
+|              |                      |                                                              |
 |              |                      |                                                              |
 
