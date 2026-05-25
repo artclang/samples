@@ -18,7 +18,7 @@ public void Run() {
     int32 rc = 0;
 
     // open database
-    rc = artc_sqlite_open("test01.db", &db);
+    rc = artc_sqlite_open("test.db", &db);
     if (rc != 0) {
         printf("Can't open database: %s\n", artc_sqlite_errmsg(db));
     }
