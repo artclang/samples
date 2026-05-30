@@ -2,5 +2,6 @@
 <Workspace>
   <Members>
     <Member Path="main" />
+    <Member Path="osif" />
   </Members>
 </Workspace>

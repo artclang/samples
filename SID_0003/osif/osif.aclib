@@ -1,0 +1,23 @@
+<Lib Version="0.1.0" Type="lib">
+  <Dependencies />
+  <NativeOptions>
+  <IncludePaths>
+    <Path>../freeRTOS/include</Path>
+    <Path>../freeRTOS/portable/MSVC-MingW</Path>
+    <Path>../freeRTOS/osif</Path>
+  </IncludePaths>
+  <Sources>
+    <Source>../freeRTOS/croutine.c</Source>
+    <Source>../freeRTOS/event_groups.c</Source>
+    <Source>../freeRTOS/freeRTOS.c</Source>
+    <Source>../freeRTOS/list.c</Source>
+    <Source>../freeRTOS/queue.c</Source>
+    <Source>../freeRTOS/stream_buffer.c</Source>
+    <Source>../freeRTOS/tasks.c</Source>
+    <Source>../freeRTOS/timers.c</Source>
+    <Source>../freeRTOS/portable/MemMang/heap_1.c</Source>
+    <Source>../freeRTOS/portable/MSVC-MingW/port.c</Source>
+    <Source>../freeRTOS/osif/freertos_if.c</Source>
+  </Sources>
+  </NativeOptions>
+</Lib>

@@ -1,0 +1,10 @@
+package osif;
+
+
+declare "C" from "freertos_if.h" {
+    void freertos_run(void);
+}
+
+public void osif_os_run() {
+    freertos_run();
+}

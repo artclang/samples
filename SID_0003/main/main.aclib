@@ -1,3 +1,5 @@
 <Lib Version="0.1.0" Type="exe">
-  <Dependencies />
+  <Dependencies>
+    <LibReference Include="osif" Path="../osif" />
+  </Dependencies>
 </Lib>

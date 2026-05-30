@@ -70,6 +70,30 @@ Explain the role of core logic, functions, and important statements (which can b
 
 
 
+```mermaid
+graph TD
+	subgraph "artc exe lib"
+  	 	A[main]
+  	 	A1[main-task]
+	end
+	subgraph "artc static lib"
+  		B[osif]
+  		B1[osif-task]
+  	end
+	subgraph "c lib"
+		C1[freertos_if]
+		C2[freertos]
+	end
+
+  	A-->B
+  	B-->C1
+  	C1-->C2
+  	C1-->B1
+  	B1-->A1
+```
+
+
+
 # 常见问题 / FAQs or Troubleshooting
 
 可能遇到的编译或运行错误及解决办法。
